@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>random quotes</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<style type="text/css">
+		body{
+			background-color: red;
+		}
+		.box{
+			position: relative;
+			background-color: white ;
+			width:500px;
+			height: auto;
+			margin:0 auto;
+			margin-top: 10%;
+			padding: 15px;
+			font-family: 'Raleway', sans-serif;
+            font-weight:400;
+		}
+		.quote-text{
+			width:500px;
+			height: auto;
+			text-align: center;
+			font-size: 26px;
+		}
+		.quote-author{
+			width:500px;
+			height: auto;
+			text-align: right;
+			font-family: 'Raleway', sans-serif;
+			font-size: 20px;
+		}
+		.buttons{
+			width:480px;
+			height: 60px;
+			position: relative;
+			margin-top: 10px;
+			padding-left:10px;
+			padding-right: 10px;
+			//padding-bottom: 5px;
+		}
+		.button{
+			background-color: red;
+			border-radius:3px;
+			color:#fff;
+			padding: 10px;
+			font-size:20px;	
+			outline:none;
+			cursor:pointer;
+
+		}
+	    #tumblr-quote{
+	    	float:left;
+			margin-right: 15px;
+		}
+		#tweet-quote{
+			float:left;
+		}
+		#new-quote{
+			float:right;
+		}
+		
+	</style>
+	<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+	
+	<script type="text/javascript">
+	    var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"]; 
+	    var quotes = [{"author":"张爱玲","content":"多余的话，我不想说了，只想问：你被光环套住了吗？也许每一个男子全都有过这样的两个女人，至少两个。娶了红玫瑰，久而久之，红的变了墙上的一抹蚊子血，白的还是“床前明月光”；娶了白玫瑰，白的便是衣服上沾的一粒饭粘子，红的却是心口上一颗朱砂痣。"},
+	    {"author":"吴玉章 ","content":"春蚕到死丝方尽，人至期颐亦不休。一息尚存须努力，留作青年好范畴。"},
+	    {"author":"欧阳修","content":"忧劳可以兴国,逸豫可以亡身。"},
+	    {"author":"张小娴","content":"没有枯涩的泪水，也没有遗憾，离去的人根本不知道那即将是一场告别。带着微笑远离，是最幸福的一种离别。所有的不舍，留给等待的那个人。一天将尽，离别之后，明日我们还会相见吗？明日，也许是天涯之遥。"},
+	    {"author":"张小娴","content":"不忠的人是可怜的，他们不是故意不忠，他们是害怕寂寞。要很多很多的爱才可以一个人对另一个人忠贞。"},
+	    {"author":"鲁迅","content":"真的猛士，敢于直面惨淡的人生，敢于正视淋漓的鲜血。"},
+	    {"author":"鲁迅","content":"伟大的成绩和辛勤劳动是成正比例的，有一分劳动就有一分收获，日积月累，从少到多，奇迹就可以创造出来。"},
+	    {"author":"鲁迅","content":"时间，就象海棉里的水，只要愿挤，总还是有的。"},
+	    ];
+	    function getQuote(){
+
+	    }
+		$(document).ready(function(){
+			$('#new-quote').click(function(){
+				var ram=Math.floor(Math.random()*colors.length);
+				$('.box').css({
+					'color':colors[ram],	
+			    });
+			    $('body').css({
+			    	'background-color':colors[ram],
+			    });
+			    $('.button').css({
+			    	'background-color':colors[ram],
+			    });
+
+			    var ramQuote=Math.floor(Math.random()*quotes.length);
+			    
+			    $('.quote-text').html(quotes[ramQuote].content);
+			    $('.quote-author').html("--"+quotes[ramQuote].author);
+			
+			});
+		});
+	</script>
+</head>
+<body>
+ <div class="box">
+   <div class="quote-text">多余的话，我不想说了，只想问：你被光环套住了吗？  
+也许每一个男子全都有过这样的两个女人，至少两个。娶了红玫瑰，久而久之，红的变了墙上的一抹蚊子血，白的还是“床前明月光”；娶了白玫瑰，白的便是衣服上沾的一粒饭粘子，红的却是心口上一颗朱砂痣。</div>
+   <div class="quote-author">--张爱玲</div>
+   <div class="buttons">
+   	<a class="button" id="tumblr-quote" title="Post this quote on tumblr!" target="_blank" href="">
+      <i class="fa fa-tumblr"></i>
+    </a>
+    <a class="button" id="tweet-quote" title="Tweet this quote!" target="_blank" href="">
+      <i class="fa fa-twitter"></i>
+    </a>
+    <button class="button" id="new-quote">切换</button>
+   </div>
+ </div>
+</body>
+</html>
